@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <test name="Practice Form Test">
+        <groups>
+            <run>
+                <include name = "Practice form page"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ui_tests.test_suites.practice_form.PracticeFormTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Check Box Page Test">
+        <groups>
+            <run>
+                <include name="Elements page"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ui_tests.test_suites.elements.CheckBoxTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Text Boxes Page Test">
+        <groups>
+            <run>
+                <include name="Elements page"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ui_tests.test_suites.elements.TextBoxTest">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,63 @@
+________________________________________________________Elements________________________________________________________
+
+_______Checkbox page
+            1. Check all checkboxes are clickable
+
+_______Text box page
+            1. Fill the form and check confirmations appeared
+
+_______Upload and download page
+            1. Download file and check file is downloaded
+            2. Upload file, check file is uploaded
+
+_______Broken links page
+_______Links page
+_______Buttons page
+_______Dynamic properties page
+_______Radio button page
+_______Web table page
+
+______________________________________________________Practice form_____________________________________________________
+
+_______Practice form page
+            1. Count checkboxes on page
+            2. Pick date through date picker
+            3. Click submit button and check result
+            4. Perform full cycle on form, check expected result is equal to actual
+
+__________________________________________________Alerts, Frame, Window_________________________________________________
+
+_______Browser window page
+_______Alerts
+_______Frames
+_______Nested frames page
+_______Modal dialog page
+
+_________________________________________________________Widgets________________________________________________________
+
+_______Accordion page
+_______Auto complete page
+_______Date picker page
+_______Slider page
+_______Progressbar page
+_______Tabs page
+_______Tool tips page
+_______Menu page
+_______Select menu page
+
+______________________________________________________Interactions______________________________________________________
+
+_______Sortable page
+_______Selectable page
+_______Resizable page
+_______Droppable page
+_______Draggable page
+
+_____________________________________________________Book store app_____________________________________________________
+
+_______Login page
+_______Book store page
+_______Profile page
+_______Book store api
+
+________________________________________________________________________________________________________________________
