@@ -8,6 +8,8 @@ import api.pogo_classes.registration.RegistrationUnsuccessful;
 import api.pogo_classes.user_time.UserData;
 import api.pogo_classes.user_time.UserTime;
 import api.pogo_classes.user_time.UserTimeResponse;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -56,6 +58,7 @@ public class ReqresTest {
     }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     public void unSuccessRegistration(){
         Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecERROR400());
         Registration user = new Registration("sydney@fife","");
@@ -69,6 +72,7 @@ public class ReqresTest {
     }
 
     @Test
+    @Severity(SeverityLevel.TRIVIAL)
     public void sortedYears() {
         Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
         List<ColorsData> sorted = given()
@@ -82,6 +86,7 @@ public class ReqresTest {
     }
 
     @Test
+    @Severity(SeverityLevel.BLOCKER)
     public void deleteRequest() {
         Specifications.installSpecifications(Specifications.requestSpec(),
                 Specifications.responseSpecUnique(204));
@@ -92,6 +97,7 @@ public class ReqresTest {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     public void timeTest() {
         Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
         UserTime user = new UserTime("morpheus","zion resident");
