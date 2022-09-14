@@ -8,6 +8,8 @@ import pages.base_page.BasePage;
 import java.util.ArrayList;
 import java.util.List;
 
+import static constants.constant.Paths.UPLOAD_FOLDER_PATH;
+
 public class PracticeFormPage extends BasePage {
     public PracticeFormPage(WebDriver driver) {
         super(driver);
@@ -42,8 +44,7 @@ public class PracticeFormPage extends BasePage {
         sendKeys(eMail, "abc123@mail.com");
         sendKeys(mobileNumber, "9876543210");
         inputTextAndPressTab(userSubjects, "Mat");
-        sendKeys(uploadPicture, "C:\\Users\\sapko\\IdeaProjects\\ToolsQArework" +
-                "\\src\\main\\resources\\files_for_testing\\avatar.jpg");
+        sendKeys(uploadPicture, UPLOAD_FOLDER_PATH);
         sendKeys(currentAddress, "Washington DC, Linkoln str.\n block A, apt. 987");
         inputTextAndPressTab(statePicker,"NCR");
         inputTextAndPressTab(cityPicker,"Delhi");
