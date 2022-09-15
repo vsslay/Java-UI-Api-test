@@ -10,12 +10,12 @@ public class config {
      * Due to webdriver restrictions, "win_firefox" doesn't have a download folder set-up method
      * and "win_opera" doesn't have a headless mod
      */
-    //public static final String PLATFORM_AND_BROWSER = "win_chrome";
+    public static final String PLATFORM_AND_BROWSER = "win_chrome";
     //public static final String PLATFORM_AND_BROWSER = "win_firefox";
     //public static final String PLATFORM_AND_BROWSER = "win_opera";
     //public static final String PLATFORM_AND_BROWSER = "win_edge";
 
-    public static final String PLATFORM_AND_BROWSER = "win_chrome_headless";
+    //public static final String PLATFORM_AND_BROWSER = "win_chrome_headless";
     //public static final String PLATFORM_AND_BROWSER = "win_firefox_headless";
     //public static final String PLATFORM_AND_BROWSER = "win_edge_headless";
 
