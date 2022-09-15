@@ -25,11 +25,11 @@ public class constant {
 
         public static final String TEXT_BOX_PAGE = "https://demoqa.com/text-box";
         public static final String CHECK_BOX_PAGE = "https://demoqa.com/checkbox";
-        public static final String RADIO_BUTTON_PAGE = "https://demoqa.com/";
+        public static final String RADIO_BUTTON_PAGE = "https://demoqa.com/radio-button";
         public static final String WEB_TABLES_PAGE = "https://demoqa.com/";
         public static final String BUTTONS_PAGE = "https://demoqa.com/";
         public static final String LINKS_PAGE = "https://demoqa.com/";
-        public static final String BROKEN_LINKS_PAGE = "https://demoqa.com/";
+        public static final String BROKEN_LINKS_PAGE = "https://demoqa.com/broken";
         public static final String UPLOAD_AND_DOWNLOAD_PAGE = "https://demoqa.com/upload-download";
         public static final String DYNAMIC_PROPERTIES_PAGE = "https://demoqa.com/";
 

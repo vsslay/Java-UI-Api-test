@@ -1,11 +1,11 @@
-package tests.test_suites.practice_form;
+package ui_tests.practice_form;
 
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import tests.base.BaseTest;
+import base.BaseTest;
 
 import static constants.constant.Urls.PRACTICE_FORM_PAGE;
 

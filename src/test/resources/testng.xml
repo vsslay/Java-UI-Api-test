@@ -9,7 +9,7 @@
             </run>
         </groups>
         <classes>
-            <class name="ui_tests.test_suites.practice_form.PracticeFormTest">
+            <class name="ui_tests.practice_form.PracticeFormTest">
             </class>
         </classes>
     </test>
@@ -20,7 +20,7 @@
             </run>
         </groups>
         <classes>
-            <class name="ui_tests.test_suites.elements.CheckBoxTest">
+            <class name="ui_tests.elements.CheckBoxTest">
             </class>
         </classes>
     </test>
@@ -31,7 +31,7 @@
             </run>
         </groups>
         <classes>
-            <class name="ui_tests.test_suites.elements.TextBoxTest">
+            <class name="ui_tests.elements.TextBoxTest">
             </class>
         </classes>
     </test>

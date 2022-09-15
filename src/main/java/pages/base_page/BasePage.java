@@ -1,6 +1,7 @@
 package pages.base_page;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -32,6 +33,18 @@ public class BasePage {
         WebElement element = driver.findElement(locator);
         new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT_10_SEC))
                 .until(ExpectedConditions.visibilityOf(element));
+        return element;
+    }
+
+    /**
+     * Wait until web-element is clickable on page
+     * @param locator is a 'By' locator of element on web-page
+     */
+    @SuppressWarnings("UnusedReturnValue")
+    public WebElement waitElementIsClickable(By locator) {
+        WebElement element = driver.findElement(locator);
+        new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT_10_SEC))
+                .until(ExpectedConditions.elementToBeClickable(element));
         return element;
     }
 
@@ -195,5 +208,15 @@ public class BasePage {
             }
         }
         return false;
+    }
+
+    public void scrollToElement(WebElement element) {
+        Actions actions = new Actions(driver);
+        actions.scrollToElement(element).perform();
+    }
+
+    public void scrollDownPage(int deltaX, int deltaY) {
+        Actions actions = new Actions(driver);
+        actions.scrollByAmount(deltaX, deltaY).perform();
     }
 }

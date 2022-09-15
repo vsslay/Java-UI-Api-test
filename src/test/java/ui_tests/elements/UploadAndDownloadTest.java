@@ -1,11 +1,11 @@
-package tests.test_suites.elements;
+package ui_tests.elements;
 
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import tests.base.BaseTest;
+import base.BaseTest;
 
 import static constants.constant.Urls.UPLOAD_AND_DOWNLOAD_PAGE;
 

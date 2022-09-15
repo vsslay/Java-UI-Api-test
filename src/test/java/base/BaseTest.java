@@ -1,4 +1,4 @@
-package tests.base;
+package base;
 
 import common.CommonActions;
 import io.qameta.allure.Attachment;
@@ -11,9 +11,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import pages.base_page.BasePage;
-import pages.elements_page.CheckBoxPage;
-import pages.elements_page.TextBoxPage;
-import pages.elements_page.UploadAndDownloadPage;
+import pages.elements_page.*;
 import pages.form_page.PracticeFormPage;
 
 import static common.config.*;
@@ -28,7 +26,12 @@ public class BaseTest implements ITestListener{
     protected TextBoxPage textBoxPage = new TextBoxPage(driver);
     protected CheckBoxPage checkBoxPage = new CheckBoxPage(driver);
     protected UploadAndDownloadPage uploadAndDownloadPage = new UploadAndDownloadPage(driver);
-
+    protected RadioButtonPage radioButtonPage = new RadioButtonPage(driver);
+//    protected DynamicPropPage dynamicPropPage = new DynamicPropPage(driver);
+    protected BrokenLinksPage brokenLinksPage = new BrokenLinksPage(driver);
+//    protected ButtonsPage buttonsPage = new ButtonsPage(driver);
+//    protected LinksPage linksPage = new LinksPage(driver);
+//    protected WebTablePage webTablePage = new WebTablePage(driver);
 
 
     @AfterClass

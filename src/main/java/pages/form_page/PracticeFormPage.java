@@ -44,7 +44,7 @@ public class PracticeFormPage extends BasePage {
         sendKeys(eMail, "abc123@mail.com");
         sendKeys(mobileNumber, "9876543210");
         inputTextAndPressTab(userSubjects, "Mat");
-        sendKeys(uploadPicture, UPLOAD_FOLDER_PATH);
+        sendKeys(uploadPicture, UPLOAD_FOLDER_PATH + "avatar.jpg");
         sendKeys(currentAddress, "Washington DC, Linkoln str.\n block A, apt. 987");
         inputTextAndPressTab(statePicker,"NCR");
         inputTextAndPressTab(cityPicker,"Delhi");

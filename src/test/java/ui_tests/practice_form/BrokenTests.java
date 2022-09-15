@@ -1,4 +1,4 @@
-package ui_tests.test_suites.practice_form;
+package ui_tests.practice_form;
 
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -6,8 +6,8 @@ import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import ui_tests.base.BaseTest;
-import ui_tests.base.RetryOnFail;
+import base.BaseTest;
+import base.RetryOnFail;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package ui_tests.base;
+package base;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
