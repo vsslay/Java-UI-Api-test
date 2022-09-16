@@ -13,6 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static constants.constant.TimeoutVar.EXPLICIT_WAIT_10_SEC;
 
+@SuppressWarnings("unused")
 public class BasePage {
     protected WebDriver driver;
 
@@ -210,6 +211,8 @@ public class BasePage {
         return false;
     }
 
+//_______________________________________________________Actions________________________________________________________
+
     public void scrollToElement(WebElement element) {
         Actions actions = new Actions(driver);
         actions.scrollToElement(element).perform();
@@ -218,5 +221,35 @@ public class BasePage {
     public void scrollDownPage(int deltaX, int deltaY) {
         Actions actions = new Actions(driver);
         actions.scrollByAmount(deltaX, deltaY).perform();
+    }
+
+    public void actionClick(By locator) {
+        Actions actions = new Actions(driver);
+        actions.click(driver.findElement(locator));
+    }
+
+    public void doubleClick(By locator) {
+        Actions actions = new Actions(driver);
+        actions.doubleClick(driver.findElement(locator));
+    }
+
+    public void contextClick(By locator) {
+        Actions actions = new Actions(driver);
+        actions.contextClick(driver.findElement(locator));
+    }
+
+    public void clickAndHold(By locator) {
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(driver.findElement(locator));
+    }
+
+    public void dragAndDropElementByCoordinates(By locator, int xAxes, int yAxes) {
+        Actions actions = new Actions(driver);
+        actions.dragAndDropBy(driver.findElement(locator), xAxes, yAxes);
+    }
+
+    public void dragAndDropElementToElement(By locatorFrom, By locatorTo) {
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(driver.findElement(locatorFrom), driver.findElement(locatorTo));
     }
 }

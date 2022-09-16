@@ -16,13 +16,14 @@ import org.testng.annotations.Test;
 import java.time.Clock;
 import java.util.List;
 
+import static constants.constant.Urls.REQRES_PAGE;
 import static io.restassured.RestAssured.given;
 
 public class ReqresTest {
 
     @Test
     public void checkAvatarAndIdTest(){
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
         List<UserData> users = given()
                 .when()
                 .get("api/users?page=2")
@@ -41,7 +42,7 @@ public class ReqresTest {
 
     @Test
     public void successRegistration(){
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
         Integer id = 4;
         String token = "QpwL5tke4Pnpja7X4";
         Registration user = new Registration("eve.holt@reqres.in","pistol");
@@ -60,7 +61,7 @@ public class ReqresTest {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     public void unSuccessRegistration(){
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecERROR400());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecERROR400());
         Registration user = new Registration("sydney@fife","");
         RegistrationUnsuccessful unsuccessfulReg = given()
                 .body(user)
@@ -74,7 +75,7 @@ public class ReqresTest {
     @Test
     @Severity(SeverityLevel.TRIVIAL)
     public void sortedYears() {
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
         List<ColorsData> sorted = given()
                 .when()
                 .get("api/unknown")
@@ -88,7 +89,7 @@ public class ReqresTest {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     public void deleteRequest() {
-        Specifications.installSpecifications(Specifications.requestSpec(),
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE),
                 Specifications.responseSpecUnique(204));
         given()
                 .when()
@@ -99,7 +100,7 @@ public class ReqresTest {
     @Test
     @Severity(SeverityLevel.MINOR)
     public void timeTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
         UserTime user = new UserTime("morpheus","zion resident");
         UserTimeResponse response = given()
                 .body(user)

@@ -27,11 +27,11 @@ public class BaseTest implements ITestListener{
     protected CheckBoxPage checkBoxPage = new CheckBoxPage(driver);
     protected UploadAndDownloadPage uploadAndDownloadPage = new UploadAndDownloadPage(driver);
     protected RadioButtonPage radioButtonPage = new RadioButtonPage(driver);
-//    protected DynamicPropPage dynamicPropPage = new DynamicPropPage(driver);
+    protected DynamicPropPage dynamicPropPage = new DynamicPropPage(driver);
     protected BrokenLinksPage brokenLinksPage = new BrokenLinksPage(driver);
-//    protected ButtonsPage buttonsPage = new ButtonsPage(driver);
-//    protected LinksPage linksPage = new LinksPage(driver);
-//    protected WebTablePage webTablePage = new WebTablePage(driver);
+    protected ButtonsPage buttonsPage = new ButtonsPage(driver);
+    protected LinksPage linksPage = new LinksPage(driver);
+    protected WebTablePage webTablePage = new WebTablePage(driver);
 
 
     @AfterClass

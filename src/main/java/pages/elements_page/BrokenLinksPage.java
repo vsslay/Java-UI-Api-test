@@ -4,8 +4,6 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import pages.base_page.BasePage;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
 @SuppressWarnings("UnusedReturnValue")
@@ -16,7 +14,6 @@ public class BrokenLinksPage extends BasePage {
 
     public final By imagesOnPage = By.xpath("//div/img");
     public final By linksOnPage = By.xpath("//div[@class='row']/div/div/a");
-    public final By imageOnPage = By.xpath("//img[@alt='Selenium Online Training']");
 
     public BrokenLinksPage checkImagesOnPage() {
         List<WebElement> images = driver.findElements(imagesOnPage).stream().toList();

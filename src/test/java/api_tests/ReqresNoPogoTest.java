@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static constants.constant.Urls.REQRES_PAGE;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
@@ -21,7 +22,7 @@ public class ReqresNoPogoTest {
     @Test
     @Severity(SeverityLevel.NORMAL)
     public void CheckAvatarContainsText() {
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
         Response response = given()
                 .when()
                 .get("api/users?page=2")
@@ -43,7 +44,7 @@ public class ReqresNoPogoTest {
     @Test
     @Severity(SeverityLevel.NORMAL)
     public void userRegNoPogo() {
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecOK200());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
         Map<String,String> userData = new HashMap<>();
         userData.put("email","eve.holt@reqres.in");
         userData.put("password","pistol");
@@ -63,11 +64,11 @@ public class ReqresNoPogoTest {
     @Test
     @Severity(SeverityLevel.NORMAL)
     public void userRegUnsuccessfulNoPogo() {
-        Specifications.installSpecifications(Specifications.requestSpec(), Specifications.responseSpecERROR400());
+        Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecERROR400());
         Map<String,String> userData = new HashMap<>();
         userData.put("email","sydney@fife");
         userData.put("password","");
-        Response response = (Response) given()
+        given()
                 .body(userData)
                 .when()
                 .post("api/register")

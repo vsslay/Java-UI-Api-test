@@ -6,12 +6,10 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.*;
 import io.restassured.specification.*;
 
-import static constants.constant.Urls.REQRES_PAGE;
-
 public class Specifications {
-    public static RequestSpecification requestSpec() {
+    public static RequestSpecification requestSpec(String page) {
         return new RequestSpecBuilder()
-                .setBaseUri(REQRES_PAGE)
+                .setBaseUri(page)
                 .setContentType(ContentType.JSON)
                 .build();
     }
