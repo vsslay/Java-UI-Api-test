@@ -41,6 +41,11 @@ public class BasePage {
         return element;
     }
 
+    /**
+     *
+     * @param locator defines element to take text from
+     * @return text of element
+     */
     @SuppressWarnings("UnnecessaryLocalVariable")
     public String getElementText(By locator) {
         String text = driver.findElement(locator).getText();
@@ -237,77 +242,141 @@ public class BasePage {
 
 //_______________________________________________________Actions________________________________________________________
 
+    /**
+     * Scrolls to element on page
+     * @param element defines element to be scrolled to
+     */
     public void scrollToElement(WebElement element) {
         Actions actions = new Actions(driver);
         actions.scrollToElement(element).perform();
     }
 
+    /**
+     * scrolling page by X and Y axes
+     * @param deltaX defines X-axes
+     * @param deltaY defines Y-axes
+     */
     public void scrollDownPage(int deltaX, int deltaY) {
         Actions actions = new Actions(driver);
         actions.scrollByAmount(deltaX, deltaY).perform();
     }
 
+    /**
+     * Click element on page using Actions
+     * @param locator defines element to be clicked
+     */
     public void actionClick(By locator) {
         Actions actions = new Actions(driver);
         actions.click(driver.findElement(locator));
     }
 
+    /**
+     * Double click element on page
+     * @param locator defines element to be double-clicked
+     */
     public void doubleClick(By locator) {
         Actions actions = new Actions(driver);
         actions.doubleClick(driver.findElement(locator));
     }
 
+    /**
+     * Right click element on page
+     * @param locator defines element to be right-clicked
+     */
     public void contextClick(By locator) {
         Actions actions = new Actions(driver);
         actions.contextClick(driver.findElement(locator));
     }
 
+    /**
+     * Click and hold element on page
+     * @param locator defines element to be clicked and held
+     */
     public void clickAndHold(By locator) {
         Actions actions = new Actions(driver);
         actions.clickAndHold(driver.findElement(locator));
     }
 
+    /**
+     * Drag and drop element by coordinates
+     * @param locator element to be drag&drop
+     * @param xAxes drag and drop X-axes
+     * @param yAxes drag and drop Y-axes
+     */
     public void dragAndDropElementByCoordinates(By locator, int xAxes, int yAxes) {
         Actions actions = new Actions(driver);
         actions.dragAndDropBy(driver.findElement(locator), xAxes, yAxes);
     }
 
+    /**
+     * Drag element and drop it to another element
+     * @param locatorFrom element that will be dragged
+     * @param locatorTo element to drop first element on
+     */
     public void dragAndDropElementToElement(By locatorFrom, By locatorTo) {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(driver.findElement(locatorFrom), driver.findElement(locatorTo));
     }
 //_______________________________________________________Alerts_________________________________________________________
 
+    /**
+     * Dismiss alert
+     */
     public void dismissAlert() {
         driver.switchTo().alert().dismiss();
     }
 
+    /**
+     * Accept alert
+     */
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
 
+    /**
+     * Get text from alert
+     */
     public void getAlertText() {
         driver.switchTo().alert().getText();
     }
 
+    /**
+     * Send text to alert
+     * @param text defines text to be sent to alert
+     */
     public void sendKeysToAlert(String text) {
         driver.switchTo().alert().sendKeys(text);
     }
 //______________________________________________________Switches________________________________________________________
+
+    /**
+     * Switch driver to work with new window
+     */
     public void switchToNewWindow() {
         String newTab = driver.getWindowHandle();
         driver.switchTo().window(newTab);
     }
 
+    /**
+     * Return to original window
+     * @param origin handle for original window
+     */
     public void switchToOriginalWindow(String origin) {
         driver.switchTo().window(origin);
     }
 
+    /**
+     * Switch to defined iframe on page
+     * @param locator defines iframe to be switched to
+     */
     public void switchBetweenFrames(By locator) {
         WebElement newFrame = driver.findElement(locator);
         driver.switchTo().frame(newFrame);
     }
 
+    /**
+     * Switch back to parent iframe
+     */
     public void switchToParentFrame() {
         driver.switchTo().parentFrame();
     }
