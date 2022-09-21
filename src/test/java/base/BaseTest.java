@@ -10,6 +10,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import pages.alerts_frames_windows_page.*;
 import pages.base_page.BasePage;
 import pages.elements_page.*;
 import pages.form_page.PracticeFormPage;
@@ -32,6 +33,12 @@ public class BaseTest implements ITestListener{
     protected ButtonsPage buttonsPage = new ButtonsPage(driver);
     protected LinksPage linksPage = new LinksPage(driver);
     protected WebTablePage webTablePage = new WebTablePage(driver);
+    protected AlertsPage alertsPage = new AlertsPage(driver);
+    protected BrowserWindowsPage browserWindowsPage = new BrowserWindowsPage(driver);
+    protected FramesPage framesPage = new FramesPage(driver);
+    protected ModalDialogsPage modalDialogsPage = new ModalDialogsPage(driver);
+    protected NestedFramesPage nestedFramesPage = new NestedFramesPage(driver);
+
 
 
     @AfterClass

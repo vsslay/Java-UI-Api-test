@@ -35,37 +35,37 @@ public class constant {
 
         //______________________________ Alerts, frames and windows tab ________________________________________________
 
-        public static final String BROWSER_WINDOW_PAGE = "https://demoqa.com/";
-        public static final String ALERTS_PAGE = "https://demoqa.com/";
-        public static final String FRAMES_PAGE = "https://demoqa.com/";
-        public static final String NESTED_FRAMES_PAGE = "https://demoqa.com/";
-        public static final String MODAL_DIALOGS_PAGE = "https://demoqa.com/";
+        public static final String BROWSER_WINDOW_PAGE = "https://demoqa.com/browser-windows";
+        public static final String ALERTS_PAGE = "https://demoqa.com/alerts";
+        public static final String FRAMES_PAGE = "https://demoqa.com/frames";
+        public static final String NESTED_FRAMES_PAGE = "https://demoqa.com/nestedframes";
+        public static final String MODAL_DIALOGS_PAGE = "https://demoqa.com/modal-dialogs";
 
         //______________________________ Widgets tab ___________________________________________________________________
 
-        public static final String ACCORDION_PAGE = "https://demoqa.com/";
-        public static final String AUTO_COMPLETE_PAGE = "https://demoqa.com/";
-        public static final String DATE_PICKER_PAGE = "https://demoqa.com/";
-        public static final String SLIDER_PAGE = "https://demoqa.com/";
-        public static final String PROGRESS_BAR_PAGE = "https://demoqa.com/";
-        public static final String TABS_PAGE = "https://demoqa.com/";
-        public static final String TOOL_TIPS_PAGE = "https://demoqa.com/";
-        public static final String MENU_PAGE = "https://demoqa.com/";
-        public static final String SELECT_MENU_PAGE = "https://demoqa.com/";
+        public static final String ACCORDION_PAGE = "https://demoqa.com/accordian";
+        public static final String AUTO_COMPLETE_PAGE = "https://demoqa.com/auto-complete";
+        public static final String DATE_PICKER_PAGE = "https://demoqa.com/date-picker";
+        public static final String SLIDER_PAGE = "https://demoqa.com/slider";
+        public static final String PROGRESS_BAR_PAGE = "https://demoqa.com/progress-bar";
+        public static final String TABS_PAGE = "https://demoqa.com/tabs";
+        public static final String TOOL_TIPS_PAGE = "https://demoqa.com/tool-tips";
+        public static final String MENU_PAGE = "https://demoqa.com/menu";
+        public static final String SELECT_MENU_PAGE = "https://demoqa.com/select-menu";
 
         //______________________________ Interactions tab ______________________________________________________________
 
-        public static final String SORTABLE_PAGE = "https://demoqa.com/";
-        public static final String SELECTABLE_PAGE = "https://demoqa.com/";
-        public static final String RESIZABLE_PAGE = "https://demoqa.com/";
-        public static final String DROPPABLE_PAGE = "https://demoqa.com/";
-        public static final String DRAGGABLE_PAGE = "https://demoqa.com/";
+        public static final String SORTABLE_PAGE = "https://demoqa.com/sortable";
+        public static final String SELECTABLE_PAGE = "https://demoqa.com/selectable";
+        public static final String RESIZABLE_PAGE = "https://demoqa.com/resizable";
+        public static final String DROPPABLE_PAGE = "https://demoqa.com/droppable";
+        public static final String DRAGGABLE_PAGE = "https://demoqa.com/dragabble";
 
         //______________________________ Books store tab _______________________________________________________________
 
-        public static final String LOGIN_PAGE = "https://demoqa.com/";
-        public static final String BOOKSTORE_PAGE = "https://demoqa.com/";
-        public static final String PROFILE_PAGE = "https://demoqa.com/";
+        public static final String LOGIN_PAGE = "https://demoqa.com/login";
+        public static final String BOOKSTORE_PAGE = "https://demoqa.com/books";
+        public static final String PROFILE_PAGE = "https://demoqa.com/profile";
 
         //______________________________ Reqres Api website ____________________________________________________________
 

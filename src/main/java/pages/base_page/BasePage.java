@@ -21,6 +21,10 @@ public class BasePage {
         this.driver = driver;
     }
 
+    /**
+     * Navigate to page with URL
+     * @param url defines url to navigate to
+     */
     public void open(String url) {
         driver.get(url);
     }
@@ -37,6 +41,22 @@ public class BasePage {
         return element;
     }
 
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    public String getElementText(By locator) {
+        String text = driver.findElement(locator).getText();
+        return text;
+    }
+
+    /**
+     * Wait until alert is visible on page
+     */
+    @SuppressWarnings("UnusedReturnValue")
+    public void waitAlertIsVisible() {
+        new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT_10_SEC))
+                .until(ExpectedConditions.alertIsPresent());
+    }
+
+
     /**
      * Wait until web-element is clickable on page
      * @param locator is a 'By' locator of element on web-page
@@ -50,61 +70,12 @@ public class BasePage {
     }
 
     /**
-     * Send text to web-element
-     * @param locator is a 'By' locator of element on web-page
-     * @param text is a text that will be sent to web-element
-     */
-    public void sendKeys(By locator, String text) {
-        driver.findElement(locator).sendKeys(text);
-    }
-
-    /**
      * Count web-elements by locator
      * @param locator is a 'By' locator of element on web-page
      * @return returns integer value of how many elements were found on page
      */
     public int countElements(By locator) {
         return driver.findElements(locator).size();
-    }
-
-    /**
-     * Send text to web-element and press TAB Button
-     * @param locator is a 'By' locator of element on web-page
-     * @param text is a text that will be sent to web-element
-     */
-    public void inputTextAndPressTab(By locator, String text) {
-        driver.findElement(locator).sendKeys(text);
-        driver.findElement(locator).sendKeys(Keys.TAB);
-
-    }
-
-    /**
-     * Click web-element on page
-     * @param locator is a 'By' locator of element on web-page
-     */
-    public void clickElement(By locator) {
-        driver.findElement(locator).click();
-    }
-
-    /**
-     * Click element from list by id of the element
-     * @param locator is a 'By' locator of element on web-page
-     * @param id is an id of element from all elements from list
-     */
-    public void clickElementById(By locator, int id) {
-        driver.findElements(locator).get(id).click();
-    }
-
-    /**
-     * Click element using java-script
-     * Can be used when it is not possible/necessary to emulate human-like behavior
-     * Will click through other elements without interception
-     * @param locator is a 'By' locator of element on web-page
-     */
-    public void jsClick(By locator) {
-        WebElement element = driver.findElement(locator);
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("arguments[0].click();", element);
     }
 
     /**
@@ -142,6 +113,49 @@ public class BasePage {
     }
 
     /**
+     * Method checks if downloaded file presents in set-up directory and deletes it if it has been found
+     * @param fileName defines name of the file that should be downloaded
+     * @param downloadPath defines path that will be used for file download
+     * @return returns boolean value: true if requested file present and false if not
+     */
+    @SuppressWarnings("UnusedReturnValue")
+    public boolean checkFileIsDownloaded(String fileName, String downloadPath) {
+        File dir = new File(downloadPath);
+        File[] dirContents = dir.listFiles();
+
+        assert dirContents != null;
+        for (File dirContent : dirContents) {
+            if (dirContent.getName().equals(fileName)) {
+                dirContent.deleteOnExit();
+                return true;
+            }
+        }
+        return false;
+    }
+
+//____________________________________________________Sending Keys______________________________________________________
+
+    /**
+     * Send text to web-element
+     * @param locator is a 'By' locator of element on web-page
+     * @param text is a text that will be sent to web-element
+     */
+    public void sendKeys(By locator, String text) {
+        driver.findElement(locator).sendKeys(text);
+    }
+
+    /**
+     * Send text to web-element and press TAB Button
+     * @param locator is a 'By' locator of element on web-page
+     * @param text is a text that will be sent to web-element
+     */
+    public void inputTextAndPressTab(By locator, String text) {
+        driver.findElement(locator).sendKeys(text);
+        driver.findElement(locator).sendKeys(Keys.TAB);
+
+    }
+
+    /**
      * Method sends text to multiple elements on page.
      * It can be used to fill all inputs on page with sample text.
      * @param locator is a 'By' locator of element on web-page
@@ -155,6 +169,37 @@ public class BasePage {
             driver.findElements(locator).get(iteration).sendKeys(text);
             iteration++;
         }
+    }
+
+//_______________________________________________________Clicks_________________________________________________________
+
+    /**
+     * Click web-element on page
+     * @param locator is a 'By' locator of element on web-page
+     */
+    public void clickElement(By locator) {
+        driver.findElement(locator).click();
+    }
+
+    /**
+     * Click element from list by id of the element
+     * @param locator is a 'By' locator of element on web-page
+     * @param id is an id of element from all elements from list
+     */
+    public void clickElementById(By locator, int id) {
+        driver.findElements(locator).get(id).click();
+    }
+
+    /**
+     * Click element using java-script
+     * Can be used when it is not possible/necessary to emulate human-like behavior
+     * Will click through other elements without interception
+     * @param locator is a 'By' locator of element on web-page
+     */
+    public void jsClick(By locator) {
+        WebElement element = driver.findElement(locator);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click();", element);
     }
 
     /**
@@ -188,27 +233,6 @@ public class BasePage {
             jse.executeScript("arguments[0].click();", toClick);
             iteration++;
         }
-    }
-
-    /**
-     * Method checks if downloaded file presents in set-up directory and deletes it if it has been found
-     * @param fileName defines name of the file that should be downloaded
-     * @param downloadPath defines path that will be used for file download
-     * @return returns boolean value: true if requested file present and false if not
-     */
-    @SuppressWarnings("UnusedReturnValue")
-    public boolean checkFileIsDownloaded(String fileName, String downloadPath) {
-        File dir = new File(downloadPath);
-        File[] dirContents = dir.listFiles();
-
-        assert dirContents != null;
-        for (File dirContent : dirContents) {
-            if (dirContent.getName().equals(fileName)) {
-                dirContent.deleteOnExit();
-                return true;
-            }
-        }
-        return false;
     }
 
 //_______________________________________________________Actions________________________________________________________
@@ -252,4 +276,40 @@ public class BasePage {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(driver.findElement(locatorFrom), driver.findElement(locatorTo));
     }
+//_______________________________________________________Alerts_________________________________________________________
+
+    public void dismissAlert() {
+        driver.switchTo().alert().dismiss();
+    }
+
+    public void acceptAlert() {
+        driver.switchTo().alert().accept();
+    }
+
+    public void getAlertText() {
+        driver.switchTo().alert().getText();
+    }
+
+    public void sendKeysToAlert(String text) {
+        driver.switchTo().alert().sendKeys(text);
+    }
+//______________________________________________________Switches________________________________________________________
+    public void switchToNewWindow() {
+        String newTab = driver.getWindowHandle();
+        driver.switchTo().window(newTab);
+    }
+
+    public void switchToOriginalWindow(String origin) {
+        driver.switchTo().window(origin);
+    }
+
+    public void switchBetweenFrames(By locator) {
+        WebElement newFrame = driver.findElement(locator);
+        driver.switchTo().frame(newFrame);
+    }
+
+    public void switchToParentFrame() {
+        driver.switchTo().parentFrame();
+    }
+
 }
