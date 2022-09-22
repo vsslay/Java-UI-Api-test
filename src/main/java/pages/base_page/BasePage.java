@@ -3,6 +3,7 @@ package pages.base_page;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -50,6 +51,18 @@ public class BasePage {
     public String getElementText(By locator) {
         String text = driver.findElement(locator).getText();
         return text;
+    }
+
+    /**
+     * Get attribute value of defined element on page
+     * @param locator defines locator of element that contains attribute needed
+     * @param name is a name of attribute that had to be got
+     * @return value of attribute via String format
+     */
+    public String getElementAttribute(By locator, String name) {
+        @SuppressWarnings("UnnecessaryLocalVariable")
+        String attribute = driver.findElement(locator).getAttribute(name);
+        return attribute;
     }
 
     /**
@@ -138,7 +151,27 @@ public class BasePage {
         return false;
     }
 
+    /**
+     * Get text of element from list by id of the element
+     * @param locator is a 'By' locator of element on web-page
+     * @param id is an id of element from all elements from list
+     */
+    public String getTextById(By locator, int id) {
+        @SuppressWarnings("UnnecessaryLocalVariable")
+        String text = driver.findElements(locator).get(id).getText();
+        return text;
+    }
+
 //____________________________________________________Sending Keys______________________________________________________
+
+    /**
+     * Send keys to element from list by id of the element
+     * @param locator is a 'By' locator of element on web-page
+     * @param id is an id of element from all elements from list
+     */
+    public void sendKeysById(By locator, int id, String text) {
+        driver.findElements(locator).get(id).sendKeys(text);
+    }
 
     /**
      * Send text to web-element
@@ -176,6 +209,14 @@ public class BasePage {
         }
     }
 
+    /**
+     * Hold defined key until statement is equal
+     */
+    public void holdKey(By locator, Keys key) {
+        WebElement element = driver.findElement(locator);
+        element.sendKeys(key);
+    }
+
 //_______________________________________________________Clicks_________________________________________________________
 
     /**
@@ -205,6 +246,17 @@ public class BasePage {
         WebElement element = driver.findElement(locator);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].click();", element);
+    }
+
+    /**
+     *
+     */
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    public Object getElementAttributes(By locator) {
+        WebElement element = driver.findElement(locator);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        Object attributes = jse.executeScript("var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;", element);
+        return attributes;
     }
 
     /**
@@ -317,6 +369,15 @@ public class BasePage {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(driver.findElement(locatorFrom), driver.findElement(locatorTo));
     }
+
+    /**
+     * Move cursor to the element
+     * @param locator defines the element to focuse on
+     */
+    public void focusOnElement(By locator) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(locator)).perform();
+    }
 //_______________________________________________________Alerts_________________________________________________________
 
     /**
@@ -347,6 +408,7 @@ public class BasePage {
     public void sendKeysToAlert(String text) {
         driver.switchTo().alert().sendKeys(text);
     }
+
 //______________________________________________________Switches________________________________________________________
 
     /**
@@ -381,4 +443,40 @@ public class BasePage {
         driver.switchTo().parentFrame();
     }
 
+//______________________________________________________Selects_________________________________________________________
+
+    public void selectByValue(By locator, String value) {
+        Select select = new Select(driver.findElement(locator));
+        select.selectByValue(value);
+    }
+
+    public void selectByIndex(By locator, Integer index) {
+        Select select = new Select(driver.findElement(locator));
+        select.selectByIndex(index);
+    }
+
+    public void selectByVisibleText(By locator, String value) {
+        Select select = new Select(driver.findElement(locator));
+        select.selectByVisibleText(value);
+    }
+
+    public void deselectByValue(By locator, String value) {
+        Select select = new Select(driver.findElement(locator));
+        select.deselectByValue(value);
+    }
+
+    public void deselectByIndex(By locator, Integer index) {
+        Select select = new Select(driver.findElement(locator));
+        select.deselectByIndex(index);
+    }
+
+    public void deselectByVisibleText(By locator, String value) {
+        Select select = new Select(driver.findElement(locator));
+        select.deselectByVisibleText(value);
+    }
+
+    public void deselectByVisibleText(By locator) {
+        Select select = new Select(driver.findElement(locator));
+        select.deselectAll();
+    }
 }

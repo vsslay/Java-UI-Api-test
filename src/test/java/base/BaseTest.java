@@ -14,6 +14,7 @@ import pages.alerts_frames_windows_page.*;
 import pages.base_page.BasePage;
 import pages.elements_page.*;
 import pages.form_page.PracticeFormPage;
+import pages.widgets.*;
 
 import static common.config.*;
 
@@ -38,6 +39,15 @@ public class BaseTest implements ITestListener{
     protected FramesPage framesPage = new FramesPage(driver);
     protected ModalDialogsPage modalDialogsPage = new ModalDialogsPage(driver);
     protected NestedFramesPage nestedFramesPage = new NestedFramesPage(driver);
+    protected AccordionPage accordionPage = new AccordionPage(driver);
+    protected AutoCompletePage autoCompletePage = new AutoCompletePage(driver);
+    protected DatePickerPage datePickerPage = new DatePickerPage(driver);
+    protected MenuPage menuPage = new MenuPage(driver);
+    protected ProgressBarPage progressBarPage = new ProgressBarPage(driver);
+    protected SelectMenuPage selectMenuPage = new SelectMenuPage(driver);
+    protected SliderPage sliderPage = new SliderPage(driver);
+    protected TabsPage tabsPage = new TabsPage(driver);
+    protected ToolTipsPage toolTipsPage = new ToolTipsPage(driver);
 
 
 
