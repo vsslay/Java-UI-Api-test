@@ -43,6 +43,39 @@ public class BasePage {
     }
 
     /**
+     * Check if:
+     * @param text is visible on page
+     */
+    @SuppressWarnings({"ResultOfMethodCallIgnored", "UnusedReturnValue"})
+    public String checkTextPresentedOnPage(String text) {
+        driver.getPageSource().contains(text);
+        return text;
+    }
+
+    /**
+     * Count elements on page
+     */
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    public Integer countElementsOnPage(By locator) {
+        Integer numberOfElements = driver.findElements(locator).size();
+        return numberOfElements;
+    }
+
+    /**
+     * Choose element on page by its index
+     * @param locator defines elements to choose from
+     * @param index defines index of element that should be chosen
+     */
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    public WebElement chooseElementByIndex(By locator, Integer index) {
+        WebElement element = driver.findElements(locator)
+                .stream()
+                .toList()
+                .get(index);
+        return element;
+    }
+
+    /**
      *
      * @param locator defines element to take text from
      * @return text of element
@@ -211,6 +244,8 @@ public class BasePage {
 
     /**
      * Hold defined key until statement is equal
+     * @param key defines key to be sent to element
+     * @param locator defines element to send key to
      */
     public void holdKey(By locator, Keys key) {
         WebElement element = driver.findElement(locator);
@@ -249,7 +284,8 @@ public class BasePage {
     }
 
     /**
-     *
+     * Get all attributes available for defined element
+     * @param locator defines element that attributes will be taken from
      */
     @SuppressWarnings("UnnecessaryLocalVariable")
     public Object getElementAttributes(By locator) {
@@ -351,7 +387,7 @@ public class BasePage {
 
     /**
      * Drag and drop element by coordinates
-     * @param locator element to be drag&drop
+     * @param locator element to be drag&dropped
      * @param xAxes drag and drop X-axes
      * @param yAxes drag and drop Y-axes
      */
@@ -368,6 +404,27 @@ public class BasePage {
     public void dragAndDropElementToElement(By locatorFrom, By locatorTo) {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(driver.findElement(locatorFrom), driver.findElement(locatorTo));
+    }
+
+    /**
+     * Drag and drop element by coordinates
+     * @param element defines element to be drag&dropped
+     * @param xAxes drag and drop X-axes
+     * @param yAxes drag and drop Y-axes
+     */
+    public void dragAndDropWebElementByCoordinates(WebElement element, int xAxes, int yAxes) {
+        Actions actions = new Actions(driver);
+        actions.dragAndDropBy(element, xAxes, yAxes);
+    }
+
+    /**
+     * Drag element and drop it to another element
+     * @param originElement defines element that will be dragged
+     * @param destination defines element to drop first element on
+     */
+    public void dragAndDropWebElementToElement(WebElement originElement, WebElement destination) {
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(originElement, destination);
     }
 
     /**

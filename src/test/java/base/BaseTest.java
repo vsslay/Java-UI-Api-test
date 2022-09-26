@@ -14,6 +14,7 @@ import pages.alerts_frames_windows_page.*;
 import pages.base_page.BasePage;
 import pages.elements_page.*;
 import pages.form_page.PracticeFormPage;
+import pages.interactions_page.*;
 import pages.widgets.*;
 
 import static common.config.*;
@@ -48,6 +49,11 @@ public class BaseTest implements ITestListener{
     protected SliderPage sliderPage = new SliderPage(driver);
     protected TabsPage tabsPage = new TabsPage(driver);
     protected ToolTipsPage toolTipsPage = new ToolTipsPage(driver);
+    protected DraggablePage draggablePage = new DraggablePage(driver);
+    protected DroppablePage droppablePage = new DroppablePage(driver);
+    protected ResizablePage resizablePage = new ResizablePage(driver);
+    protected SelectablePage selectablePage = new SelectablePage(driver);
+    protected SortablePage sortablePage = new SortablePage(driver);
 
 
 
