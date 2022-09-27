@@ -10,6 +10,7 @@ import java.util.List;
 
 import static constants.constant.Paths.UPLOAD_FOLDER_PATH;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class PracticeFormPage extends BasePage {
     public PracticeFormPage(WebDriver driver) {
         super(driver);

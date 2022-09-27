@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base_page.BasePage;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class TabsPage extends BasePage {
     public TabsPage(WebDriver driver) {
         super(driver);

@@ -17,6 +17,7 @@ public class WebTablePage extends BasePage {
     }
 
     public final By searchBox = By.id("searchBox");
+    @SuppressWarnings("SpellCheckingInspection")
     public final By gridOfElements = By.xpath("//div[@role='grid']/div[@class='rt-tbody']/div");
     public final By selectRows = By.xpath("//select/option[3]");
 

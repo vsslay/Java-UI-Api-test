@@ -18,15 +18,21 @@ public class UserData {
         return email;
     }
 
+    @SuppressWarnings("unused")
     public String getFirst_name() {
         return first_name;
     }
 
+    @SuppressWarnings("unused")
     public String getLast_name() {
         return last_name;
     }
 
     public String getAvatar() {
         return avatar;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

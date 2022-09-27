@@ -40,6 +40,7 @@ public class ReqresTest {
         }
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     @Test
     public void successRegistration(){
         Specifications.installSpecifications(Specifications.requestSpec(REQRES_PAGE), Specifications.responseSpecOK200());
@@ -52,10 +53,10 @@ public class ReqresTest {
                 .post("api/register")
                 .then().log().all()
                 .extract().as(RegistrationSuccess.class);
-        Assert.assertNotNull(success.getId());
-        Assert.assertNotNull(success.getToken());
-        Assert.assertEquals(id, success.getId());
-        Assert.assertEquals(token, success.getToken());
+        Assert.assertNotNull(success.id());
+        Assert.assertNotNull(success.token());
+        Assert.assertEquals(id, success.id());
+        Assert.assertEquals(token, success.token());
     }
 
     @Test
@@ -111,6 +112,6 @@ public class ReqresTest {
         String regex = "(.{8})$";
         String regexLocal = "(.{14})$";
         String currentTime = Clock.systemUTC().instant().toString().replaceAll(regexLocal,"");
-        Assert.assertEquals(currentTime, response.getUpdatedAt().replaceAll(regex,""));
+        Assert.assertEquals(currentTime, response.updatedAt().replaceAll(regex,""));
     }
 }

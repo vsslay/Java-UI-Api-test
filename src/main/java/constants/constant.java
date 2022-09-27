@@ -7,6 +7,7 @@ public class constant {
         public static final int EXPLICIT_WAIT_10_SEC = 10;
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     public static class Paths {
         public static final String DOWNLOAD_FOLDER_PATH =
                 "C:\\Users\\sapko\\IdeaProjects\\JavaUIfwk\\src\\main\\resources\\files_for_testing\\download";
@@ -64,8 +65,10 @@ public class constant {
         //______________________________ Books store tab _______________________________________________________________
 
         public static final String LOGIN_PAGE = "https://demoqa.com/login";
+        public static final String REGISTRATION_PAGE = "https://demoqa.com/register";
         public static final String BOOKSTORE_PAGE = "https://demoqa.com/books";
         public static final String PROFILE_PAGE = "https://demoqa.com/profile";
+        public static final String BOOKSTORE_API_URL = "https://bookstore.toolsqa.com/";
 
         //______________________________ Reqres Api website ____________________________________________________________
 

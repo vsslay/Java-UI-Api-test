@@ -13,6 +13,7 @@ public class SortablePage extends BasePage {
 
     public final By demoTabGrid = By.id("demo-tab-grid");
     public final By demoTabList = By.id("demo-tab-list");
+    @SuppressWarnings("SpellCheckingInspection")
     public final By sortableList = By.xpath("//div[@id='demo-tabpane-list']/div/div");
     public final By sortableGrid = By.xpath("//div[@class='create-grid']/div");
 

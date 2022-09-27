@@ -12,6 +12,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import pages.alerts_frames_windows_page.*;
 import pages.base_page.BasePage;
+import pages.book_store_page.StorePage;
+import pages.book_store_page.LoginPage;
+import pages.book_store_page.ProfilePage;
 import pages.elements_page.*;
 import pages.form_page.PracticeFormPage;
 import pages.interactions_page.*;
@@ -54,8 +57,9 @@ public class BaseTest implements ITestListener{
     protected ResizablePage resizablePage = new ResizablePage(driver);
     protected SelectablePage selectablePage = new SelectablePage(driver);
     protected SortablePage sortablePage = new SortablePage(driver);
-
-
+    protected StorePage bookStorePage = new StorePage(driver);
+    protected LoginPage loginPage = new LoginPage(driver);
+    protected ProfilePage profilePage = new ProfilePage(driver);
 
     @AfterClass
     public void clearCookiesAndStorage() {

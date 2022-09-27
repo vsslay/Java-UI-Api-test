@@ -13,7 +13,7 @@ public class BrokenLinksPage extends BasePage {
     }
 
     public final By imagesOnPage = By.xpath("//div/img");
-    public final By linksOnPage = By.xpath("//div[@class='row']/div/div/a");
+    public final By brokenLink = By.xpath("//a[contains(text(),'Broken')]");
 
     public BrokenLinksPage checkImagesOnPage() {
         List<WebElement> images = driver.findElements(imagesOnPage).stream().toList();
@@ -31,16 +31,8 @@ public class BrokenLinksPage extends BasePage {
         return this;
     }
 
-    public BrokenLinksPage checkLinksOnPage() {
-        List<WebElement> links = driver.findElements(linksOnPage).stream().toList();
-        int iterations = 0;
-        while (iterations != links.size()) {
-            WebElement element = links.get(iterations);
-            scrollDownPage(0, 500);
-            element.click();
-            driver.navigate().back();
-            iterations++;
-        }
+    public BrokenLinksPage apiCall() {
+        checkStatusCode(brokenLink, 500);
         return this;
     }
 }

@@ -26,4 +26,9 @@ public class LinksPageTest extends BaseTest {
     public void clickAndCheckDynamicLink() {
         linksPage.clickDynamicLink();
     }
+
+    @Test
+    public void apiCall() {
+        linksPage.apiCall(200);
+    }
 }

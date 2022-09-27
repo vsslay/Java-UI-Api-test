@@ -14,6 +14,7 @@ import java.util.Random;
 import static constants.constant.Urls.PRACTICE_FORM_PAGE;
 
 
+@SuppressWarnings("ALL")
 public class BrokenTests extends BaseTest {
 
     @BeforeTest

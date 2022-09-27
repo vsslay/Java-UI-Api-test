@@ -22,11 +22,17 @@ public class ColorsData {
         return year;
     }
 
+    @SuppressWarnings("unused")
     public String getColor() {
         return color;
     }
 
+    @SuppressWarnings("unused")
     public String getPantone_value() {
         return pantone_value;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

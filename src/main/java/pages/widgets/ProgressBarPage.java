@@ -13,7 +13,7 @@ public class ProgressBarPage extends BasePage {
     public final By resetButton = By.id("resetButton");
     public final By progressBar = By.xpath("//*[@id='progressBar']/div");
 
-    @SuppressWarnings("UnnecessaryLocalVariable")
+    @SuppressWarnings({"UnnecessaryLocalVariable", "SpellCheckingInspection"})
     public String getAttributeValue () {
         String valueNow = getElementAttribute(progressBar, "aria-valuenow");
         return valueNow;

@@ -20,6 +20,7 @@ import static common.config.*;
 import static constants.constant.Paths.DOWNLOAD_FOLDER_PATH;
 import static constants.constant.TimeoutVar.IMPLICIT_WAIT_5_SEC;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class CommonActions {
     @SuppressWarnings({"ConstantConditions", "deprecation"})
     public static WebDriver createDriver() {
@@ -79,15 +80,9 @@ public class CommonActions {
             default -> Assert.fail("Something went wrong with webdriver: " + PLATFORM_AND_BROWSER);
         }
         switch (SET_WINDOW_SIZE) {
-            case "maximize" -> {
-                driver.manage().window().maximize();
-            }
-            case "minimize" -> {
-                driver.manage().window().minimize();
-            }
-            case "fullscreen" -> {
-                driver.manage().window().fullscreen();
-            }
+            case "maximize" -> driver.manage().window().maximize();
+            case "minimize" -> driver.manage().window().minimize();
+            case "fullscreen" -> driver.manage().window().fullscreen();
             default -> Assert.fail("Error while setting window size: " + SET_WINDOW_SIZE);
         }
 

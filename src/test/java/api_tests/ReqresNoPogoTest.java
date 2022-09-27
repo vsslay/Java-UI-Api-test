@@ -41,6 +41,7 @@ public class ReqresNoPogoTest {
         Assert.assertTrue(emails.stream().allMatch(email->email.endsWith("@reqres.in")));
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     @Test
     @Severity(SeverityLevel.NORMAL)
     public void userRegNoPogo() {

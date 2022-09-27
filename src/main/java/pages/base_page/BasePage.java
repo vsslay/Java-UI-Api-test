@@ -1,5 +1,6 @@
 package pages.base_page;
 
+import io.restassured.RestAssured;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +11,7 @@ import org.testng.Assert;
 import java.io.File;
 import java.time.Duration;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static constants.constant.TimeoutVar.EXPLICIT_WAIT_10_SEC;
@@ -28,6 +30,37 @@ public class BasePage {
      */
     public void open(String url) {
         driver.get(url);
+    }
+
+    /**
+     * Check url is opened
+     * @param urlExpected defines expected url
+     */
+    public boolean isOpened(String urlExpected) {
+        return Objects.equals(driver.getCurrentUrl(), urlExpected);
+    }
+
+    /**
+     * @param url defines url which response is going to be got
+     * @return value is a status code
+     */
+    public int httpResponseCodeViaGet(String url) {
+        return RestAssured.get(url).statusCode();
+    }
+
+    /**
+     * Check status cod and compare it with expected
+     * @param locator element that contains href attribute
+     * @param expectedCode expected status code
+     * @return integer status code
+     */
+    @SuppressWarnings("UnusedReturnValue")
+    public Integer checkStatusCode(By locator, Integer expectedCode) {
+        WebElement element = driver.findElement(locator);
+        String href = element.getAttribute("href");
+        Integer statusCode = new BasePage(driver).httpResponseCodeViaGet(href);
+        Assert.assertEquals(statusCode, expectedCode);
+        return statusCode;
     }
 
     /**
@@ -252,6 +285,15 @@ public class BasePage {
         element.sendKeys(key);
     }
 
+    /**
+     * Clear keys from defined input
+     * @param locator defines element to be cleared
+     */
+    public void clearKeys(By locator) {
+        WebElement element = driver.findElement(locator);
+        element.clear();
+    }
+
 //_______________________________________________________Clicks_________________________________________________________
 
     /**
@@ -429,7 +471,7 @@ public class BasePage {
 
     /**
      * Move cursor to the element
-     * @param locator defines the element to focuse on
+     * @param locator defines the element to focus on
      */
     public void focusOnElement(By locator) {
         Actions actions = new Actions(driver);
@@ -502,37 +544,71 @@ public class BasePage {
 
 //______________________________________________________Selects_________________________________________________________
 
+    /**
+     * Select option by its value
+     * @param locator defines locator of options list
+     * @param value defines value that should be presented
+     */
     public void selectByValue(By locator, String value) {
         Select select = new Select(driver.findElement(locator));
         select.selectByValue(value);
     }
 
+    /**
+     * Select option by its index
+     * @param locator defines locator of options list
+     * @param index defines index of element that should be presented
+     */
     public void selectByIndex(By locator, Integer index) {
         Select select = new Select(driver.findElement(locator));
         select.selectByIndex(index);
     }
 
-    public void selectByVisibleText(By locator, String value) {
+    /**
+     * * Select option by its visible text
+     * @param locator defines locator of options list
+     * @param text defines text that should be presented
+     */
+    public void selectByVisibleText(By locator, String text) {
         Select select = new Select(driver.findElement(locator));
-        select.selectByVisibleText(value);
+        select.selectByVisibleText(text);
     }
 
+    /**
+     * Deselect option by its value
+     * @param locator defines locator of options list
+     * @param value defines value that should be presented
+     */
     public void deselectByValue(By locator, String value) {
         Select select = new Select(driver.findElement(locator));
         select.deselectByValue(value);
     }
 
+    /**
+     * Deselect option by its index
+     * @param locator defines locator of options list
+     * @param index defines index of element that should be presented
+     */
     public void deselectByIndex(By locator, Integer index) {
         Select select = new Select(driver.findElement(locator));
         select.deselectByIndex(index);
     }
 
-    public void deselectByVisibleText(By locator, String value) {
+    /**
+     * * Deselect option by its visible text
+     * @param locator defines locator of options list
+     * @param text defines text that should be presented
+     */
+    public void deselectByVisibleText(By locator, String text) {
         Select select = new Select(driver.findElement(locator));
-        select.deselectByVisibleText(value);
+        select.deselectByVisibleText(text);
     }
 
-    public void deselectByVisibleText(By locator) {
+    /**
+     * Deselect option by its visible text
+     * @param locator defines locator of options list
+     */
+    public void deselectAll(By locator) {
         Select select = new Select(driver.findElement(locator));
         select.deselectAll();
     }
