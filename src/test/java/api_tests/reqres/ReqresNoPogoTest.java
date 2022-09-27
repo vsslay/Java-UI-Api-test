@@ -1,4 +1,4 @@
-package api_tests;
+package api_tests.reqres;
 
 import api.Specifications;
 import io.qameta.allure.Severity;
