@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--suppress XmlDefaultAttributeValue -->
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/sapko/IdeaProjects/JavaUIfwk">
+        <classes>
+            <class name="api_tests.reqres.ReqresNoPogoTest">
+                <methods>
+                    <include name="CheckAvatarContainsText"/>
+                    <include name="userRegNoPogo"/>
+                    <include name="userRegUnsuccessfulNoPogo"/>
+                </methods>
+            </class>
+            <class name="api_tests.reqres.ReqresTest">
+                <methods>
+                    <include name="checkAvatarAndIdTest"/>
+                    <include name="successRegistration"/>
+                    <include name="unSuccessRegistration"/>
+                    <include name="sortedYears"/>
+                    <include name="deleteRequest"/>
+                    <include name="timeTest"/>
+                </methods>
+            </class>
+            <class name="ui_tests.alerts_frames_windows.AlertsPageTest">
+                <methods>
+                    <include name="testAlert"/>
+                    <include name="testAlertAfterFiveSeconds"/>
+                    <include name="testAlertAcceptThanDecline"/>
+                    <include name="testAlertSendTextAndAccept"/>
+                </methods>
+            </class>
+            <class name="ui_tests.alerts_frames_windows.BrowserWindowsPageTest">
+                <methods>
+                    <include name="openNewTab"/>
+                    <include name="openNewWindow"/>
+                    <include name="openNewMessage"/>
+                </methods>
+            </class>
+            <class name="ui_tests.alerts_frames_windows.FramesPageTest">
+                <methods>
+                    <include name="switchBetweenFrames"/>
+                </methods>
+            </class>
+            <class name="ui_tests.alerts_frames_windows.ModalDialogsPageTest">
+                <methods>
+                    <include name="checkSmallModal"/>
+                    <include name="checkLargeModal"/>
+                </methods>
+            </class>
+            <class name="ui_tests.alerts_frames_windows.NestedFramesPageTest">
+                <methods>
+                    <include name="switchBetweenFrames"/>
+                </methods>
+            </class>
+            <class name="ui_tests.book_store.BookStoreTest">
+                <methods>
+                    <include name="addBooks"/>
+                    <include name="deleteBooks"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.BrokenLinksTest">
+                <methods>
+                    <include name="checkAllImages"/>
+                    <include name="checkStatusCode"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.ButtonsPageTest">
+                <methods>
+                    <include name="doubleClickButton"/>
+                    <include name="rightClickButton"/>
+                    <include name="clickButton"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.CheckBoxTest">
+                <methods>
+                    <include name="checkAllCheckboxesClickable"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.DynamicPropPageTest">
+                <methods>
+                    <include name="clickAfterEnable"/>
+                    <include name="clickAfterColorChange"/>
+                    <include name="clickAfterVisible"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.LinksPageTest">
+                <methods>
+                    <include name="clickAndCheckSimpleLink"/>
+                    <include name="clickAndCheckDynamicLink"/>
+                    <include name="apiCall"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.RadioButtonTest">
+                <methods>
+                    <include name="checkAllCheckboxesClickable"/>
+                    <include name="checkInactiveButton"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.TextBoxTest">
+                <methods>
+                    <include name="sendKeysAndSubmit"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.UploadAndDownloadTest">
+                <methods>
+                    <include name="downloadAndCheckFileIsDownloaded"/>
+                    <include name="uploadAndCheckFileIsUploaded"/>
+                </methods>
+            </class>
+            <class name="ui_tests.elements.WebTablePageTest">
+                <methods>
+                    <include name="inputDataToWebTable"/>
+                    <include name="checkElementGrid"/>
+                </methods>
+            </class>
+            <class name="ui_tests.interactions.DraggablePageTest">
+                <methods>
+                    <include name="checkAxisRestrictionTab"/>
+                    <include name="checkContainerRestrictionTab"/>
+                    <include name="checkCursorRestrictionTab"/>
+                    <include name="checkSimpleTab"/>
+                </methods>
+            </class>
+            <class name="ui_tests.interactions.DroppablePageTest">
+                <methods>
+                    <include name="checkPropTab"/>
+                    <include name="checkRevertTab"/>
+                    <include name="checkAcceptTab"/>
+                    <include name="checkSimpleTab"/>
+                </methods>
+            </class>
+            <class name="ui_tests.interactions.ResizablePageTest">
+                <methods>
+                    <include name="checkResizableBoxRestricted"/>
+                    <include name="checkResizableBox"/>
+                </methods>
+            </class>
+            <class name="ui_tests.interactions.SelectablePageTest">
+                <methods>
+                    <include name="checkGridTab"/>
+                    <include name="checkListTab"/>
+                </methods>
+            </class>
+            <class name="ui_tests.interactions.SortablePageTest">
+                <methods>
+                    <include name="checkGridTab"/>
+                    <include name="checkListTab"/>
+                </methods>
+            </class>
+            <class name="ui_tests.practice_form.BrokenTests">
+                <methods>
+                    <include name="failureTest"/>
+                    <include name="passAfterRetry"/>
+                    <include name="passAfterRetryTwo"/>
+                    <include name="checkAllCheckboxesClickable"/>
+                </methods>
+            </class>
+            <class name="ui_tests.practice_form.PracticeFormTest">
+                <methods>
+                    <include name="checkGendersAmount"/>
+                    <include name="checkDatePickTable"/>
+                    <include name="checkSubmitButton"/>
+                    <include name="checkValuesTable"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.AccordionPageTest">
+                <methods>
+                    <include name="clickTabsAndCheckText"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.AutoCompletePageTest">
+                <methods>
+                    <include name="inputOneColor"/>
+                    <include name="inputMultipleColors"/>
+                    <include name="clearColors"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.DatePickerPageTest">
+                <methods>
+                    <include name="pickDateOnFirstPicker"/>
+                    <include name="pickDateFromSecondPicker"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.MenuPageTest">
+                <methods>
+                    <include name="checkMenus"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.ProgressBarPageTest">
+                <methods>
+                    <include name="checkProgressBar"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.SelectMenuPageTest">
+                <methods>
+                    <include name="checkSelections"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.SliderPageTest">
+                <methods>
+                    <include name="checkSlider"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.TabsPageTest">
+                <methods>
+                    <include name="clickAndCheckText"/>
+                </methods>
+            </class>
+            <class name="ui_tests.widgets.ToolTipsPageTest">
+                <methods>
+                    <include name="hoverAndCheckTooltips"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
